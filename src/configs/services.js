@@ -2,8 +2,6 @@ import {get, post} from './networking';
 
 // end point
 export const endpoint = {
-  getListUser: async page => get(`/users?page=${page}`),
-  getUserById: async id => get(`/users/${id}`),
   login: async params => post('api/users/login', params),
   register: async params => post('api/users/register', params),
   getAll: async id => get(`api/quiz/all?data=${id}`),
@@ -11,6 +9,8 @@ export const endpoint = {
   quizAll: async () => get('api/quiz/all'),
   quizById: async id => get(`api/quiz/?id=${id}`),
   getNilai: async (id, params) => post(`api/quiz/post/quiz?id=${id}`, params),
+  cekById: async id => get('api/quiz/?id=5e7265b445593b24a82792be'),
+  testById: async id => get('api/quiz/?id=5e7265b445593b24a82792c9'),
 };
 
 export default {endpoint};

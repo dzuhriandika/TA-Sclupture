@@ -9,6 +9,7 @@ import Password from '../../Svg/Password';
 import {ENDPOINT} from '../../configs';
 import {STORAGE_KEY} from '../../constants';
 import storage from '../../utils/storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class Login extends Component {
   static navigationOptions = {header: null};
@@ -21,6 +22,10 @@ export default class Login extends Component {
   }
   _onPress = async () => {
     const {email, password} = this.state;
+    const payload = {
+      email: email,
+      password: password,
+    };
     const params = {email, password};
     if (email === '' && password === '') {
       ToastAndroid.show('Masukan Password & Email', ToastAndroid.SHORT);
@@ -28,6 +33,7 @@ export default class Login extends Component {
       try {
         const result = await ENDPOINT.login(params);
         if (result.code === 200) {
+          await AsyncStorage.setItem('email', payload.email);
           await storage.set(STORAGE_KEY.TOKEN_LOGIN, result.token);
           console.log(STORAGE_KEY.TOKEN_LOGIN);
           ToastAndroid.show('Succes To Login', ToastAndroid.SHORT);
@@ -50,7 +56,7 @@ export default class Login extends Component {
               <Text style={Style.title}>Masuk</Text>
             </View>
             <View style={Style.labelWrapper}>
-              <Text style={Style.label}>Nomor Ponsel / Email</Text>
+              <Text style={Style.label}>Email</Text>
             </View>
             <View style={Style.inputWrapper}>
               <Email />

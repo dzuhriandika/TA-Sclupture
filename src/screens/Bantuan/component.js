@@ -31,14 +31,14 @@ export default class Profile extends Component {
               <Amplop />
             </View>
             <Text style={Style.title}>Email kami</Text>
-            <Text style={Style.email}>batix@gmail.com</Text>
+            <Text style={Style.email}>sclupture@gmail.com</Text>
           </View>
           <View style={Style.content}>
             <View style={Style.icon}>
               <Telpon />
             </View>
             <Text style={Style.title}>No Telpon kami</Text>
-            <Text style={Style.email}>087821641816</Text>
+            <Text style={Style.email}>+62 822-2068-8774</Text>
           </View>
         </View>
       </View>

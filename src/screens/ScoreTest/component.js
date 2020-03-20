@@ -1,8 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
-import {Button, Text, View} from 'native-base';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
+import Button from '../../components/Button';
 import {scale} from '../../utils/scaling';
 import {blue, white, red, black, green} from '../../styles/colors';
 import metrics from '../../constants/metrics';
@@ -47,18 +47,7 @@ export default class Component extends React.Component {
     });
   };
   _onPress = () => {
-    const index = this.state.index;
-    this.props.navigation.navigate('PlayQuiz', {
-      index,
-      type: this.state.type,
-    });
-  };
-  _getPembahasan = () => {
-    const index = this.state.index;
-    this.props.navigation.navigate('Pembahasan', {
-      index,
-      type: this.state.type,
-    });
+    this.props.navigation.navigate('Home');
   };
   render() {
     return (
@@ -209,32 +198,18 @@ export default class Component extends React.Component {
               width: metrics.screenWidth,
               marginTop: scale(24),
               height: scale(240),
-              flexDirection: 'row',
             }}>
             <Button
-              bordered
-              onPress={this._onPress}
-              style={{
-                width: scale(131),
-                justifyContent: 'center',
-                borderRadius: 10,
-                borderColor: '#EF883D',
-                marginRight: scale(50),
-              }}>
-              <Text uppercase={false} style={{color: '#EF883D'}}>
-                Ulangi
-              </Text>
-            </Button>
-            <Button
-              onPress={this._getPembahasan}
-              style={{
-                width: scale(131),
-                justifyContent: 'center',
-                borderRadius: 10,
+              customContainer={{
+                height: 50,
                 backgroundColor: '#EF883D',
-              }}>
-              <Text uppercase={false}>Pembahasan</Text>
-            </Button>
+                borderRadius: 10,
+                width: scale(310),
+              }}
+              title="Selesai"
+              customText={{color: '#FFF'}}
+              onPress={this._onPress}
+            />
           </View>
         </View>
       </Container>

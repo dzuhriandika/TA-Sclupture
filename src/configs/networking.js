@@ -1,14 +1,12 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-expressions */
 /* global fetch:false */
 import cacheService from '../utils/cache';
 import storage from '../utils/storage';
 import { STORAGE_KEY } from '../constants';
 
 export const config = {
-  baseUrl: 'http://34.227.73.162/'
+  baseUrl: 'http://54.166.58.123:8080/'
 };
 
 export const STATUS_CODE = {
@@ -28,7 +26,7 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
   console.log(token);
   if (token.length > 0) {
-    if (url === 'http://34.227.73.162/api/users/register') {
+    if (url === 'http://54.166.58.123:8080/api/users/register') {
       headers = {
         ...headers
       };
@@ -46,7 +44,7 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
     headers
   });
   // for DELETE method case
-  if (response.status === STATUS_CODE.NO_CONTENT) return {};
+  if (response.status === STATUS_CODE.NO_CONTENT) {return {};}
   const json = await response.json();
 
   // for caching response API
@@ -99,7 +97,7 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
 // };
 
 const get = async (endpoint, params = {}, headers = {}) => {
-  console.log(params)
+  console.log(params);
   let queryString = Object.keys(params)
     .map(key => `${key}=${params[key]}`)
     .join('&');
@@ -115,7 +113,7 @@ const get = async (endpoint, params = {}, headers = {}) => {
 };
 
 const post = async (endpoint, params = {}, headers = {}) => {
-  console.log(params)
+  console.log(params);
   const url = `${config.baseUrl}${endpoint}`;
   const fetchParams = {
     method: 'POST',

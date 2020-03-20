@@ -10,8 +10,24 @@ import Arrow from '../../Svg/arrow';
 import Keluar from '../../Svg/Keluar';
 import Bantuan from '../../Svg/Bantuan';
 import Card from '../../components/CardProfile';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+    };
+
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
+  async componentDidMount() {
+    let data = await AsyncStorage.getItem('email');
+    let split = data.split('@');
+
+    this.setState({email: split[0], data});
+  }
   render() {
     return (
       <View style={Style.mainScreen}>
@@ -24,8 +40,8 @@ export default class Profile extends Component {
               style={Style.profil}
             />
             <View style={Style.nameWrapper}>
-              <Text style={Style.name}>Didi Kurniawan</Text>
-              <Text style={Style.smk}>SMK Telkom Purwokerto</Text>
+              <Text style={Style.name}>{this.state.email}</Text>
+              <Text style={Style.smk}>{this.state.data}</Text>
             </View>
           </View>
           <View style={Style.editIcon}>

@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {TextInput, View, Text, ScrollView, ToastAndroid} from 'react-native';
-import {Button, Form, Item, Input, Container} from 'native-base';
+import {Button} from 'native-base';
 import Style from './styles';
 import Email from '../../Svg/Email';
-import Sekolah from '../../Svg/sekolah';
 import Password from '../../Svg/Password';
 import EmailReg from '../../Svg/emailReg';
 import TelponReg from '../../Svg/telponReg';
@@ -13,30 +12,24 @@ export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       school: '',
       email: '',
-      phone: '',
+      fullname: '',
       password: '',
       hidden: true,
     };
   }
   _onPress = async () => {
-    const {name, school, email, phone, password} = this.state;
-    const params = {name, school, email, phone, password};
-    if (
-      name === '' &&
-      school === '' &&
-      email === '' &&
-      phone === '' &&
-      password === ''
-    ) {
+    const {username, email, fullname, password} = this.state;
+    const params = {username, email, fullname, password};
+    if (username === '' && email === '' && fullname === '' && password === '') {
       ToastAndroid.show('Masukan Password & Email', ToastAndroid.SHORT);
     } else {
       try {
         const result = await ENDPOINT.register(params);
 
-        if (result.code === 200) {
+        if (result.code === 201) {
           ToastAndroid.show('Succes to login', ToastAndroid.SHORT);
           this.props.navigation.navigate('App');
         } else {
@@ -57,29 +50,29 @@ export default class Register extends Component {
                 <Text style={Style.title}>Daftar</Text>
               </View>
               <View style={Style.labelWrapper}>
-                <Text style={Style.label}>Nama Lengkap</Text>
+                <Text style={Style.label}>Username</Text>
               </View>
               <View style={Style.inputWrapper}>
                 <Email />
                 <TextInput
                   placeholderTextColor="#C4C4C4"
-                  placeholder="Nama Lengkap"
+                  placeholder="Username"
                   underlineColorAndroid="transparent"
                   style={Style.input}
-                  onChangeText={name => this.setState({name})}
+                  onChangeText={username => this.setState({username})}
                 />
               </View>
               <View style={Style.labelWrapper}>
-                <Text style={Style.label}>Sekolah</Text>
+                <Text style={Style.label}>Fullname</Text>
               </View>
               <View style={Style.inputWrapper}>
-                <Sekolah />
+                <Email />
                 <TextInput
                   placeholderTextColor="#C4C4C4"
-                  placeholder="Sekolahh"
+                  placeholder="Fullname"
                   underlineColorAndroid="transparent"
                   style={Style.input}
-                  onChangeText={school => this.setState({school})}
+                  onChangeText={fullname => this.setState({fullname})}
                 />
               </View>
               <View style={Style.labelWrapper}>
@@ -96,19 +89,6 @@ export default class Register extends Component {
                 />
               </View>
               <View style={Style.labelWrapper}>
-                <Text style={Style.label}>Nomor Ponsel</Text>
-              </View>
-              <View style={Style.inputWrapper}>
-                <TelponReg />
-                <TextInput
-                  placeholderTextColor="#C4C4C4"
-                  placeholder="Nomor Ponsel"
-                  underlineColorAndroid="transparent"
-                  style={Style.input}
-                  onChangeText={phone => this.setState({phone})}
-                />
-              </View>
-              <View style={Style.labelWrapper}>
                 <Text style={Style.label}>Password</Text>
               </View>
               <View style={Style.inputWrapper}>
@@ -122,7 +102,7 @@ export default class Register extends Component {
                 />
               </View>
             </View>
-            <Button onPress={this.login} style={Style.btn}>
+            <Button onPress={this._onPress} style={Style.btn}>
               <Text uppercase={false} style={Style.btnTeks}>
                 Daftar
               </Text>

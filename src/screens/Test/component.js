@@ -5,9 +5,10 @@ import Header from '../../components/Header';
 import Card from '../../components/CardQuiz';
 import Style from './styles';
 import Arrow from '../../Svg/arrow';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View, FlatList} from 'react-native';
 import {ENDPOINT} from '../../configs';
 import PropTypes from 'prop-types';
+import ArrowLeft from '../../Svg/arrowLeft';
 
 export default class Quiz extends Component {
   static navigationOptions = {tabbarVisible: true};
@@ -25,14 +26,17 @@ export default class Quiz extends Component {
     try {
       const result = await ENDPOINT.quizAll();
       console.log(result);
-      this.setState({data: result.data});
+      const data = result.data[0];
+      console.log(data);
+      this.setState({data: data});
+      console.log(this.state.data);
     } catch (e) {
       console.log(e);
     }
   };
   _onPress = () => {};
   _toDetail = index => {
-    this.props.navigation.navigate('PlayQuiz', {
+    this.props.navigation.navigate('PlayTest', {
       index,
       type: this.state.type,
     });
@@ -41,17 +45,25 @@ export default class Quiz extends Component {
     return (
       <Container>
         <Header
-          iconLeft={<Icon name="arrow-round-back" style={Style.iconLeft} />}
-          title="Ujian"
+          iconLeft={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Home')}>
+              <ArrowLeft />
+            </TouchableOpacity>
+          }
+          title="Quiz"
         />
         <Content style={Style.container}>
-          {this.state.data.map((data, index) => (
-            <View key={index}>
-              <TouchableOpacity onPress={() => this._toDetail(data._id)}>
-                <Card title={data.title} divisi="15 Soal" icon2={<Arrow />} />
-              </TouchableOpacity>
-            </View>
-          ))}
+          <View>
+            <TouchableOpacity
+              onPress={() => this._toDetail('5e7265b445593b24a82792c9')}>
+              <Card
+                title="Ujian Seni Ukir"
+                divisi="15 Soal"
+                icon2={<Arrow />}
+              />
+            </TouchableOpacity>
+          </View>
         </Content>
       </Container>
     );

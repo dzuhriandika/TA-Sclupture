@@ -49,7 +49,7 @@ export default class Component extends React.Component {
   _getparams = async () => {
     const {params} = this.props.navigation.state;
     const getindex = params ? params.index : 'umroh';
-    const result = await ENDPOINT.cekById(getindex);
+    const result = await ENDPOINT.testById(getindex);
     this.setState({
       index: getindex,
       data: result.data.question,
@@ -61,7 +61,7 @@ export default class Component extends React.Component {
     const index = this.state.index;
     const soal = this.state.data.length;
     this.setState({modalVisible: !this.state.modalVisible});
-    this.props.navigation.navigate('Score', {result, index, soal});
+    this.props.navigation.navigate('ScoreTest', {result, index, soal});
   };
   _setAnswer = (index, answer) => {
     if (this.state.jawaban.length === 0) {

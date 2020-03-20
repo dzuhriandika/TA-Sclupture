@@ -28,6 +28,9 @@ import Bantuan from '../screens/Bantuan';
 import PlayQuizScreen from '../screens/PlayQuiz';
 import ScoreScreen from '../screens/Score';
 import TutorialScreen from '../screens/Tutorial';
+import PembahasanScreen from '../screens/Pembahasan';
+import ScoreTestScreen from '../screens/ScoreTest';
+import PlayTestScreen from '../screens/PlayTest';
 
 export const SplashScreenStack = createStackNavigator({
   SplashScreen: {
@@ -186,6 +189,24 @@ export const HomeStack = createStackNavigator(
     },
     Tutorial: {
       screen: TutorialScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Pembahasan: {
+      screen: PembahasanScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    PlayTest: {
+      screen: PlayTestScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    ScoreTest: {
+      screen: ScoreTestScreen,
       navigationOptions: {
         header: null,
       },

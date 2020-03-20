@@ -50,7 +50,7 @@ export default class Lala extends Component {
               <Card
                 icon1={
                   <Image
-                    source={IMAGES.rz}
+                    source={IMAGES.zuh}
                     resizeMode="contain"
                     style={Style.nana}
                   />

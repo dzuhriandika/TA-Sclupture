@@ -10,15 +10,7 @@ export default class Profile extends Component {
   render() {
     return (
       <View style={Style.mainScreen}>
-        <Header
-          title="Gallery"
-          iconLeft={
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Home')}>
-              <ArrowLeft />
-            </TouchableOpacity>
-          }
-        />
+        <Header title="Gallery" />
         <ScrollView>
           <View style={Style.container}>
             <View style={Style.contentWrapper}>
