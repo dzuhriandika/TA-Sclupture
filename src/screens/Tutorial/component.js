@@ -36,13 +36,38 @@ export default class Materi extends Component {
               onPress={() =>
                 Linking.openURL('https://www.youtube.com/watch?v=J8TtHfOgZnU')
               }>
-              <Card title="Teknik Memahat" icon2={<Arrow />} />
+              <Card title="Cara mudah belajar mengukir" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                Linking.openURL('https://www.youtube.com/watch?v=U_Qu6e-nYkY')
+                Linking.openURL('https://www.youtube.com/watch?v=T7cVTb6BBWI')
               }>
-              <Card title="Teknik Mengkilapkan" icon2={<Arrow />} />
+              <Card title="Desain ukiran kayu untuk pemula" icon2={<Arrow />} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL('https://www.youtube.com/watch?v=re3POcproPs')
+              }>
+              <Card title="Belajar mengukir styrofoam" icon2={<Arrow />} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL('https://www.youtube.com/watch?v=jpROSlYkJgo')
+              }>
+              <Card title="Soap Carving" icon2={<Arrow />} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL('https://www.youtube.com/watch?v=3e3-k8_90Xk')
+              }>
+              <Card title="Rock Carving" icon2={<Arrow />} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL('https://www.youtube.com/watch?v=62VKQ3fUHrE')
+              }>
+              <Card title="Bone Carving" icon2={<Arrow />} />
             </TouchableOpacity>
           </View>
         </ScrollView>

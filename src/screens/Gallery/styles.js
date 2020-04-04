@@ -14,4 +14,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  gambar: {
+    height: 70,
+    width: 100,
+    alignItems: 'center',
+  },
 });

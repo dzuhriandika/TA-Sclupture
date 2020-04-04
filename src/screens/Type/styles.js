@@ -30,6 +30,7 @@ export default StyleSheet.create({
   title: {
     fontWeight: 'bold',
   },
-  mb20: {},
-  marginBottom: 20,
+  body: {
+    textAlign: 'justify',
+  },
 });

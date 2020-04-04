@@ -44,11 +44,6 @@ export default class Profile extends Component {
               <Text style={Style.smk}>{this.state.data}</Text>
             </View>
           </View>
-          <View style={Style.editIcon}>
-            <TouchableOpacity>
-              <Edit />
-            </TouchableOpacity>
-          </View>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('AboutUs')}>
             <Card title="Tentang Kami" icon1={<Tentang />} icon2={<Arrow />} />

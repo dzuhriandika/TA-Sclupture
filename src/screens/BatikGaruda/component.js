@@ -8,23 +8,11 @@ import Style from './styles';
 import IMAGES from '../../config/image';
 
 export default class Definition extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'Motif Batik Garuda',
-      from: 'Asal 	: Yogyakarta',
-      attribute:
-        'Ciri-ciri 	: Motif ini terdiri dari dua sayap dan ditengahnya terdapat badan dan ekor. Motif ini dibuat berdasarkan atas kepercayaan masyarakat di masa lalu, dimana burung garuda merupakan simbol kehidupan dan kejantanan.',
-      history:
-        'Sejarah	: Batik Yogyakarta motif gurda atau garuda umumnya dipadu dengan motif batik lainya seperti motif batik sawat dan dikenal dengan nama sawat gurdo. Motif Gurda lebih mudah dimengerti karena disamping bentuknya yang sederhana juga gambarnya sangat jelas karena tidak terlalu banyak variasinya. Kata gurda berasal dari kata garuda, yaitu nama sejenis burung besar yang menurut pandangan hidup orang Jawa khususnya Yogyakarta mempunyai kedudukan yang sangat penting. Bentuk motif gurda ini terdiri dari dua buah sayap (lar) dan ditengah-tengahnya terdapat badan dan ekor. Menurut orang Yogyakarta burung ini dianggap sebagai binatang yang suci. Dalam cerita kenaikan Batara Wisnu ke Nirwana dengan mengendarai burung Garuda. Burung ini dianggap sebagai burung yang teguh timbul tanpa maguru, yang artinya sakti tanpa berguru kepada siapapun. Adapun cerita tentang asal mula Garuda menjadi kendaraan Sang Hyang Wisnu, menurut salah seorang informan berawal ketika terjadi peperangan antara Garuda dengan para dewa. Dalam peperangan tersebut para dewa dapat dikalahkan, sehingga mereka meminta bantuan pada Sang Hyang Wisnu, yang kemudian menemui burung Garuda. Pada pertemuan itu terjadi perdebatan di antara keduanya. Oleh karena para dewa telah mengalami kekalahan maka burung Garuda mengajukan usul agar para dewa mengajukan permohonan apa saja yang nantinya akan dikabulkan oleh Garuda. Akhirnya Sang Hyang Wisnu memohon.',
-    };
-  }
-
   render() {
     return (
       <Container>
         <Header
-          title="Batik Garuda - Yogyakarta"
+          title="Jenis-Jenis Seni Ukir"
           iconLeft={
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Materi')}>
@@ -33,19 +21,76 @@ export default class Definition extends Component {
           }
         />
         <ScrollView style={Style.container}>
-          <View style={Style.logoBox}>
-            <Image style={Style.logo} source={IMAGES.garuda} />
-          </View>
-          <Text>
-            {this.state.from}
-            {'\n'}
-            {'\n'}
-            {this.state.attribute}
-            {'\n'}
-            {'\n'}
-            {this.state.history}{' '}
+          <Text style={Style.body}>
+            Menurut Bastomi (1982 : 3-4), terdapat enam jenis seni ukir yang
+            dihasilkan oleh para seniman, antara lain yaitu :
           </Text>
-          <Text />
+          <View>
+            <Text style={Style.title}>{'\n'}1. Jenis Ukiran Cembung</Text>
+            <Text style={Style.body}>
+              TUkiran cembung merupakan berbentuk ukiran cembung, jenis ukiran
+              ini banyak digunakan pada pembuatan relief.
+            </Text>
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              2. Jenis Ukiran Cekung
+            </Text>
+            <Text style={Style.body}>
+              Ukiran cekung yaitu suatu bentuk ukiran yang membentuk cekung.
+            </Text>
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              3. Jenis Ukiran Susun
+            </Text>
+            <Text style={Style.body}>
+              Ukiran susun adalah suatu ukiran yang berbentuk bersusun-susun.
+              Misalnya pada ukiran daun yang besar di bawah ukiran daun yang
+              sedang dan kecil sehingga terjadi bentuk yang indah.
+            </Text>
+            <Text />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              4. Jenis Ukiran Garis ( Cawen)
+            </Text>
+            <Text style={Style.body}>
+              Ukiran garis merupakan bentuk ukiran yang diukir pada garis-garis
+              gambarnya saja. Jenis ukiran garis banyak digunakan pada logam
+              sebagai ukiran guratan.
+            </Text>
+            <Text />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              5. Jenis Ukiran Takokan
+            </Text>
+            <Text style={Style.body}>
+              Yaitu Suatu bentuk ukiran yang tidak menggunakan bingkai, jadi
+              ukiran ini memperlihatkan tepi-tepi batas ukiran. Ukiran takokan
+              erat hubungannya dengan jenis ukiran krawangan.
+            </Text>
+            <Text />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              6. Jenis Ukiran Tembus (Krawangan)
+            </Text>
+            <Text style={Style.body}>
+              Ukiran tembus atau krawangan adalah suatu bentuk ukiran yang tidak
+              menerapkan dasar, jadi ukiran ini dasarnya tembus (berlubang).
+              Sehingga sering dipakai untuk penyekat ruang (sketsel), kursi,
+              ukir tempel dan sebagainya.
+              {'\n'}
+            </Text>
+            <Text />
+          </View>
         </ScrollView>
       </Container>
     );

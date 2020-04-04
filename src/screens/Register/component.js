@@ -5,8 +5,8 @@ import Style from './styles';
 import Email from '../../Svg/Email';
 import Password from '../../Svg/Password';
 import EmailReg from '../../Svg/emailReg';
-import TelponReg from '../../Svg/telponReg';
 import {ENDPOINT} from '../../configs';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class Register extends Component {
   constructor(props) {
@@ -22,13 +22,17 @@ export default class Register extends Component {
   }
   _onPress = async () => {
     const {username, email, fullname, password} = this.state;
+    const payload = {
+      email: email,
+      password: password,
+    };
     const params = {username, email, fullname, password};
     if (username === '' && email === '' && fullname === '' && password === '') {
       ToastAndroid.show('Masukan Password & Email', ToastAndroid.SHORT);
     } else {
       try {
         const result = await ENDPOINT.register(params);
-
+        await AsyncStorage.setItem('email', payload.email);
         if (result.code === 201) {
           ToastAndroid.show('Succes to login', ToastAndroid.SHORT);
           this.props.navigation.navigate('App');
@@ -95,6 +99,7 @@ export default class Register extends Component {
                 <Password />
                 <TextInput
                   placeholderTextColor="#C4C4C4"
+                  secureTextEntry={true}
                   placeholder="Password"
                   underlineColorAndroid="transparent"
                   style={Style.input}

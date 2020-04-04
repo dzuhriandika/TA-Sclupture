@@ -24,4 +24,15 @@ export default StyleSheet.create({
     height: 130,
     borderRadius: 5,
   },
+  gambar: {
+    alignContent: 'center',
+    width: 100 + '%',
+    height: 130,
+  },
+  body: {
+    textAlign: 'justify',
+  },
+  title: {
+    fontWeight: 'bold',
+  },
 });

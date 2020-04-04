@@ -8,23 +8,11 @@ import Header from '../../components/Header';
 import IMAGES from '../../config/image';
 
 export default class Definition extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'Motif Batik Jepara',
-      from: 'Asal 	: Jepara',
-      attribute:
-        'Ciri-ciri 	: Motif batik yang lama mempunyai warna lung hitam dengan gajah berwarna coklat dan daun ulir berwarna hijau. Motif batik yang baru mempunyai lebih banyak variasi.',
-      history:
-        'Sejarah 	: Seni batik di Jepara telah ada sejak era Kartini. Sudah ada satu abad lebih era batik Jepara hilang dari peredaran. Batik pada zaman dahulu hingga sekarang masih dikerjakan oleh kalangan ibu-ibu. Maka dari itu tidak salah jika batik ini lebih dekat dengan seni ibu. Motif batik peninggalan eyangnya itu ada yang berupa bunga kantil, salah satu pohonnya ada di belakang pendopo Kabupaten Jepara. Motif lain adalah Parang Gondosuli, dan motif Srikaton. Motif terakhir ini bergaya Mataraman, namun berbeda dengan yang ada di Solo dan Yogyakarta yang lebih masyhur dengan istilah Srigunung. Kini Suyanti bersama paguyubannya sudah membikin setidaknya puluhan motif baru. Larasati Suliantoro mengatakan butuh keseriusan untuk tetap membumikan batik yang kini menjadi salah satu kekhasan Indonesia. Pihaknya yakin, batik akan tetap bisa diterima masyarakat. Yang patut diperhatikan saat ini adalah membina generasi penerus yang memiliki perhatian terhadap batik. Bupati Jepara Hendro Martojo mengungkapkan, advokasi dilakukan pemkab dengan mengupayakan pendaftaran hak cipta untuk karya batik khas Jepara. Selain itu juga memperluas pengenalan batik, terutama untuk kalangan pelajar di sekolah yang khusus memberikan perhatian pada seni membatik. Dalam buku karya Rouffoer yang sudah diterjemahkan, yakni Kesenian Batik di Hindia Belanda dan Sejarahnya. Dalam buku itu disebutkan, RA Kartini pernah mengirim cinderamata ke Belanda berupa kain batik khas Jepara.',
-    };
-  }
-
   render() {
     return (
       <Container>
         <Header
-          title="Batik Jepara - Jepara"
+          title="Motif Ukir"
           iconLeft={
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Materi')}>
@@ -33,19 +21,53 @@ export default class Definition extends Component {
           }
         />
         <ScrollView style={Style.container}>
-          <View style={Style.logoBox}>
-            <Image style={Style.logo} source={IMAGES.jepara} />
-          </View>
-          <Text>
-            {this.state.from}
-            {'\n'}
-            {'\n'}
-            {this.state.attribute}
-            {'\n'}
-            {'\n'}
-            {this.state.history}
+          <Text style={Style.body}>
+            Setiap daerah memiliki ciri khas motif ukiran. Penamaan ukiran
+            biasanya berdasarkan tempat dari mana motif itu berasal. Misalnya,
+            Motif Pajajaran, Motif Mataram, Motif Majapahit, Motif Bali, Motif
+            Jepara, Motif Madura, Motif Dayak, Motif Nias, Motif Pekalongan,
+            Motif Cirebon, Motif Yogyakarta dan Motif Surakarta. Masing-masing
+            motif memiliki ciri khas tersendiri yang menjadi kekuatan dan
+            kekayaan ragam hias seni ukir nusantara.
           </Text>
-          <Text> </Text>
+          <Text style={Style.body}>
+            Dari berbagai macam motif tersebut ada beberapa yang memiliki
+            persamaan, seperti motif relung, patran, ulir, benangan, cawen,
+            pecahan, angkup, endong, simbar, trubusan, cula, sunggar, dan
+            jambul. Jenis ukiran ini memiliki kesamaan dalam bentuknya namun
+            pada akhirnya memiliki sentuhan tersendiri sehingga tetap saja
+            dengan mudah dapat dibedakan. Misalnya seni ukir motif cula antara
+            satu daerah dengan daerah lainnya memang sama dari bentuknya, tapi
+            penampilan akhirnya tetap memiliki ciri tersendiri, sehingga seni
+            ukir motif cula dari daerah A akan berbeda dengan dari daerah B,
+            begitu seterusnya. Itulah kenapa seni ukir nusantara benar-benar
+            menjadi macam ragam yang memperkaya seni ukir yang ada.
+          </Text>
+          <View>
+            <Text style={Style.title}>{'\n'}1. Motif Seni Ukir Jepara</Text>
+            <Image style={Style.gambar} source={IMAGES.galeri5jepara} />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              2. Motif Seni Ukir Toraja
+            </Text>
+            <Image style={Style.gambar} source={IMAGES.galeri8toraja} />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              4. Motif Seni Ukir Yogyakarta
+            </Text>
+            <Image style={Style.gambar} source={IMAGES.galeri6jogja} />
+          </View>
+          <View style={Style.mb20}>
+            <Text style={Style.title}>
+              {'\n'}
+              5. Motif Seni Ukir Surakarta
+            </Text>
+            <Image style={Style.gambar} source={IMAGES.galeri7surakarta} />
+          </View>
         </ScrollView>
       </Container>
     );

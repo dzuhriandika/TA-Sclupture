@@ -121,7 +121,7 @@ export default class Home extends Component {
               Berita Seni
             </Text>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Garuda')}>
+              onPress={() => this.props.navigation.navigate('Berita1')}>
               <View style={Style.cardMateri}>
                 <Thumbnail
                   square
@@ -130,17 +130,17 @@ export default class Home extends Component {
                 />
                 <View style={Style.thumnailWrapper}>
                   <Text style={Style.titleMateri}>
-                    Patung Bunga Terjual Mahal
+                    Pameran Seni Rupa dan Desain Grafis
                   </Text>
                   <Text style={Style.titleThumnail}>
-                    Patung bunga dijual mahal karena dianggap patung aestetik
-                    buat kaum ...{' '}
+                    Pameran desain grafis dan pasar seni ini berlangsung selama
+                    dua bulan, mulai dari ...{' '}
                   </Text>
                 </View>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Gentongan')}>
+              onPress={() => this.props.navigation.navigate('Berita2')}>
               <View style={Style.cardMateri}>
                 <Thumbnail
                   square
@@ -149,11 +149,11 @@ export default class Home extends Component {
                 />
                 <View style={Style.thumnailWrapper}>
                   <Text style={Style.titleMateri}>
-                    Berhala yang Menyerupai Firaun
+                    H(ART)BOUR Festival 2020
                   </Text>
                   <Text style={Style.titleThumnail}>
-                    Ditemukan berhala yang menyerupai boneka doraemon yang
-                    sangat lucu ...{' '}
+                    H(ART)BOUR Festival 2020 bertema "Memory Harbour" yang
+                    diambil dari nama lukisan ...{' '}
                   </Text>
                 </View>
               </View>

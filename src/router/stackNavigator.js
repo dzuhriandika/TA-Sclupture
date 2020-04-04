@@ -17,12 +17,6 @@ import BJeparaScreen from '../screens/BatikJepara';
 import BKawungScreen from '../screens/BatikKawung';
 import BKeratonScreen from '../screens/BatikKeraton';
 import BMegaMendungScreen from '../screens/BatikMegaMendung';
-import BParangScreen from '../screens/BatikParang';
-import BPringSedapurScreen from '../screens/BatikPringSedapur';
-import BPriyanganScreen from '../screens/BatikPriyangan';
-import BSimbutScreen from '../screens/BatikSimbut';
-import BSoganScreen from '../screens/BatikSogan';
-import BTujuhRupaScreen from '../screens/BatikTujuhRupa';
 import SplashScreen from '../screens/SplashScreen';
 import Bantuan from '../screens/Bantuan';
 import PlayQuizScreen from '../screens/PlayQuiz';
@@ -31,6 +25,8 @@ import TutorialScreen from '../screens/Tutorial';
 import PembahasanScreen from '../screens/Pembahasan';
 import ScoreTestScreen from '../screens/ScoreTest';
 import PlayTestScreen from '../screens/PlayTest';
+import News1Screen from '../screens/News1';
+import News2Screen from '../screens/News2';
 
 export const SplashScreenStack = createStackNavigator({
   SplashScreen: {
@@ -121,42 +117,6 @@ export const HomeStack = createStackNavigator(
         header: null,
       },
     },
-    Parang: {
-      screen: BParangScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    PringSedapur: {
-      screen: BPringSedapurScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    Priyangan: {
-      screen: BPriyanganScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    Simbut: {
-      screen: BSimbutScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    Sogan: {
-      screen: BSoganScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    TujuhRupa: {
-      screen: BTujuhRupaScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
     Materi: {
       screen: MateriScreen,
       navigationOptions: {
@@ -207,6 +167,20 @@ export const HomeStack = createStackNavigator(
     },
     ScoreTest: {
       screen: ScoreTestScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+
+    Berita1: {
+      screen: News1Screen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+
+    Berita2: {
+      screen: News2Screen,
       navigationOptions: {
         header: null,
       },

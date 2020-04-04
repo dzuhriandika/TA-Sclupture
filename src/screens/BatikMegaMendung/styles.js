@@ -24,4 +24,10 @@ export default StyleSheet.create({
     height: 130,
     borderRadius: 5,
   },
+  body: {
+    textAlign: 'justify',
+  },
+  title: {
+    fontWeight: 'bold',
+  },
 });

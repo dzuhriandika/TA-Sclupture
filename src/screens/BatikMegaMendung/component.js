@@ -11,11 +11,12 @@ export default class Definition extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Motif Batik Mega Mendung',
-      from: 'Asal  : Cirebon',
-      attribute: 'Ciri-ciri	: Motif mendung di langit mega yang berwarna cerah.',
+      title: 'Motif Batik Gentongan',
+      from: 'Asal  : Madura',
+      attribute:
+        'Ciri-ciri	: Batik Gentongan ini diambil dari gentong atau gerabah yang dipakai sebagai wadah untuk mencelup kain batik pada cairan warna. Menggunakan motif abstrak sederhana, tanaman atau kombinasi keduanya. Biasanya menggunakan warna terang seperti merah, kuning, hijau atau ungu.',
       history:
-        'Sejarah	: Sejarah motif batik mega mendung jika ditinjau berdasarkan sumber referensi buku juga literatur yang ada akan mengarah pada satu sejarah akan kedatangan bangsa China ke wilayah Cirebon yang pada akhirnya merujuk pada pernikahan Sunan Gunung Jati dengan ratu Ong Tien pada abad ke-16. Kemudian rakyat cirebon mengenal beberapa benda seni China seperti piring, keramik, dan kain yang memiliki motif bentuk awan. Awan di dalam Paham Taoisme melambangkan nirwana sebagai gambaran dunia yang luas, abadi, bebas dan bermakna transidental konsep ketuhanan. Awan juga direpresentasikan oleh kaum sufi sebagai ungkapan yang sama yaitu konsep luas dan bebas.Hal ini menjadi perhatian para seniman batik cirebon untuk dituangkan kedalam kain batik menjadi satu nama motif baru yaitu motif batik mega mendung. Satu hal yang membedakan antara motif batik china dengan batik mega mendung yaitu pada pola awan yang terbentuk dimana motif batik china memiliki garis awan berbentuk bulatan atau lingkaran, sedangkan batik mega mendung cirebon, berupa garis awan yang cenderung lancip, lonjong, dan segitiga. Sejarah lain mengatakan bahwa perkembangan batik cirebon juga terkait dengan sejarah perkembangan gerakan kaum tarekat yang mengabdi di keraton cirebon sebagai sumber penghasilan untuk mendanai kelompok tarekat tersebut. Kelompok tersebut tinggal di desa trusmi yang terletak 4 km dari keraton cirebon. Makna lain dari motif batik mega mendung warna biru dengan kombinasi warna merah yang menggambarkan sebuah maskulinitas, dinamisme, terbuka, lugas, dan egaliter. Juga menjadi lambang sebagai pembawa hujan yang dinantikan untuk membawa kesuburan.',
+        'Sejarah	: Batik Tulis Gentongan Kuno merupakan batik peninggalan dari nenek moyang terdahulu yang diturunkan ke beberapa generasinya hingga sekarang. Sumber dari cerita leluhur (Buyut) yang diceritakan oleh nenek kita bahwa batik ini adalah mahar pernikahan dari salah satu leluhur, budaya terdahulu di Desa Tlaga Biru, Kecamatan Tanjungbumi yang digunakan mahar untuk pernikahan berupa batik Tulis Gentongan yang dibuat sebaik mungkin untuk menghormati calon pasangan hidup. Menurut cerita leluhur batik ini sudah ada sejak zaman Kiai Syaikhona Kholil Bangkalan  sekitar tahun 1900 – 1920an. Hingga saat ini masih baik barangnya karena disimpan dengan baik. Dari segi motif pun bisa kelihatan sangat berbeda dengan motif batik gentongan yang berkembang akhir – akhir ini. Masih tersimpannya dengan baik Batik Gentongan Kuno yang notabene pemiliknya adalah para pengrajin karena turun temurun dari leluhurnya terdahulu. Hal ini membuat Batik Gentongan Kuno masih banyak ditemui di daerah tanjungbumi bangkalan madura. Secara sejarah nenek moyang para  pengrajin terdahulu membuat batik gentongan salah satunya digunakan untuk mahar pengantin. serta nenek moyang para pengrajin terdahulu menyimpan baik – baik Batik Gentongan Kuno yang dahulu adalah mahar untuk pernikahan mereka, dan menurunkan batik tersebut pada anak cucunya hingga sekarang.',
     };
   }
 
@@ -23,7 +24,7 @@ export default class Definition extends Component {
     return (
       <Container>
         <Header
-          title="Batik Mega Mendung - Cirebon"
+          title="Perbedaan Seni Ukir dan Seni Pahat"
           iconLeft={
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Materi')}>
@@ -32,19 +33,30 @@ export default class Definition extends Component {
           }
         />
         <ScrollView style={Style.container}>
-          <View style={Style.logoBox}>
-            <Image style={Style.logo} source={IMAGES.megaMendung} />
+          <View>
+            <Text style={Style.body}>
+              Seni ukir ini memang selalu dihubungkan dengan seni pahat, namun
+              dua kegiatan ini sangat berbeda.
+            </Text>
           </View>
-          <Text>
-            {this.state.from}
-            {'\n'}
-            {'\n'}
-            {this.state.attribute}
-            {'\n'}
-            {'\n'}
-            {this.state.history}
-          </Text>
-          <Text> </Text>
+          <View style={Style.mb20}>
+            <Text style={Style.body}>
+              {'\n'}- Seni pahat lebih bertujuan untuk menghasilkan karya tiga
+              dimensi, seperti patung.
+            </Text>
+            <Text style={Style.body}>
+              - Sementara seni ukir, pada umumnya produknya lebih mengarah pada
+              benda wujud dwimatra (dua dimensi).
+            </Text>
+            <Text style={Style.body}>
+              - Seni pahat merupakan suatu kegiatan karya seni ukir yang dibuat
+              dalam bentuk empat sampai lima dimensi.
+            </Text>
+            <Text style={Style.body}>
+              - Sedangkan seni ukir hanya menggunakan bidang datar, yang
+              kemudian dibentuk.
+            </Text>
+          </View>
         </ScrollView>
       </Container>
     );

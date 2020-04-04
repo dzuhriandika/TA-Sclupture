@@ -76,15 +76,13 @@ export default class Login extends Component {
               <Password />
               <TextInput
                 value={password}
+                secureTextEntry={true}
                 placeholderTextColor="#C4C4C4"
                 placeholder="Password"
                 underlineColorAndroid="transparent"
                 style={Style.input}
                 onChangeText={password => this.setState({password})}
               />
-            </View>
-            <View style={Style.lupasWrapper}>
-              <Text style={Style.lupas}>Lupa Password?</Text>
             </View>
           </View>
           <Button onPress={this._onPress} style={Style.btn}>
