@@ -29,7 +29,10 @@ export default class Lala extends Component {
         <ScrollView>
           <View style={Style.container}>
             <View style={Style.card}>
-              <Text style={Style.title}>Sclupture</Text>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Image source={IMAGES.smallLogo} style={Style.logo} />
+                <Text style={Style.title}>Sclupture</Text>
+              </View>
               <Text style={Style.desc}>
                 Sclupture adalah aplikasi pembelajaran seni budaya di bidang
                 Ukir & Pahat

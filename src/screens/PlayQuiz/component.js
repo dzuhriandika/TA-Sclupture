@@ -28,6 +28,7 @@ import Dunselect from '../../Svg/DUnselect';
 import ArrowLeft from '../../Svg/arrowLeft';
 import scale from '../../utils/scaling';
 import {Card, Content} from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Component extends React.Component {
   // swiper: Swiper;
@@ -103,7 +104,7 @@ export default class Component extends React.Component {
         <View style={{flexDirection: 'row'}}>
           <CountDown
             size={20}
-            until={this.state.time}
+            until={1800}
             onFinish={() => this._onTimeout()}
             digitStyle={{borderColor: '#EF883D'}}
             digitTxtStyle={{
@@ -155,7 +156,7 @@ export default class Component extends React.Component {
                   marginBottom: 20,
                   alignItems: 'center',
                 }}>
-                <Text style={{fontSize: 12, textAlign: 'center'}}>
+                <Text style={{fontFamily: 'Nunito-Regular', fontSize: 12, textAlign: 'center'}}>
                 Apakah kamu sudah yakin dengan jawabanmu ? Jangan lupa periksa kembali sebelum mengumpulkan jawaban.
                 </Text>
               </View>
@@ -167,6 +168,7 @@ export default class Component extends React.Component {
                   backgroundColor: '#EF883D',
                   borderWidth: 1,
                   borderColor: '#EF883D',
+                  fontFamily: 'Nunito-Regular',
                 }}
                 title="Kumpulkan"
                 customText={{color: '#FFF'}}
@@ -180,6 +182,7 @@ export default class Component extends React.Component {
                     backgroundColor: '#FFF',
                     borderWidth: 1,
                     borderColor: '#fff',
+                    fontFamily: 'Nunito-Regular',
                   }} />
                 <Button
                   customContainer={{
@@ -189,6 +192,7 @@ export default class Component extends React.Component {
                     backgroundColor: '#FFF',
                     borderWidth: 1,
                     borderColor: '#EF883D',
+                    fontFamily: 'Nunito-Regular',
                   }}
                   title="Kembali"
                   onPress={this._onPress}
@@ -198,6 +202,7 @@ export default class Component extends React.Component {
             </View>
           </View>
         </Modal>
+        <ScrollView>
         <Swiper total={this.state.data.length} onPress={this._onPress}>
           {this.state.data.map((data, i) => (
             <View style={styles.slide} key={i}>
@@ -222,12 +227,14 @@ export default class Component extends React.Component {
                       fontSize: 12,
                       color: '#C4C4C4',
                       fontWeight: '600',
+                      fontFamily: 'Nunito-Regular',
                     }}>{`Pertanyaan no ${i + 1}`}</Text>
                   <Text
                     style={{
                       fontSize: 14,
                       fontWeight: '600',
                       color: '#29291E',
+                      fontFamily: 'Nunito-Regular',
                     }}>
                     {data.title}
                   </Text>
@@ -250,6 +257,7 @@ export default class Component extends React.Component {
                           fontSize: 14,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[0]}
                       </Text>
@@ -275,6 +283,7 @@ export default class Component extends React.Component {
                           marginLeft: 10,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[0]}
                       </Text>
@@ -300,6 +309,7 @@ export default class Component extends React.Component {
                           fontSize: 14,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[1]}
                       </Text>
@@ -322,6 +332,7 @@ export default class Component extends React.Component {
                           fontSize: 14,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[1]}
                       </Text>
@@ -347,6 +358,7 @@ export default class Component extends React.Component {
                           marginLeft: 10,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[2]}
                       </Text>
@@ -369,6 +381,7 @@ export default class Component extends React.Component {
                           marginLeft: 10,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[2]}
                       </Text>
@@ -394,6 +407,7 @@ export default class Component extends React.Component {
                           marginLeft: 10,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[3]}
                       </Text>
@@ -416,6 +430,7 @@ export default class Component extends React.Component {
                           marginLeft: 10,
                           fontWeight: '600',
                           color: '#29291E',
+                          fontFamily: 'Nunito-Regular',
                         }}>
                         {data[3]}
                       </Text>
@@ -426,6 +441,7 @@ export default class Component extends React.Component {
             </View>
           ))}
         </Swiper>
+        </ScrollView>
       </View>
     );
   }

@@ -20,6 +20,7 @@ const images = {
   // userOff: require('../../assets/images/user_off.png'),
   // userOn: require('../../assets/images/user_on.png'),
   appLogo: require('../image/logo.png'),
+  smallLogo: require('../image/smallLogo.png'),
   headerBgImg: require('../image/headerBg.png'),
   setting: require('../image/setting.png'),
   profil: require('../image/profil.png'),

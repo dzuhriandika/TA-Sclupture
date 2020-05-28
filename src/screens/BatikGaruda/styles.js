@@ -12,6 +12,7 @@ export default StyleSheet.create({
   titleHeader: {
     fontWeight: 'bold',
     fontSize: 25,
+    fontFamily: 'Nunito-Regular',
   },
   logoBox: {
     alignItems: 'center',
@@ -26,8 +27,10 @@ export default StyleSheet.create({
   },
   body: {
     textAlign: 'justify',
+    fontFamily: 'Nunito-Regular',
   },
   title: {
     fontWeight: 'bold',
+    fontFamily: 'Nunito-Regular',
   },
 });

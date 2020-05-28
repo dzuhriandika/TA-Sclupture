@@ -29,6 +29,7 @@ import Tutorial from '../../Svg/Tutorial';
 import Test from '../../Svg/Test';
 import Quiz from '../../Svg/Quiz';
 import AsyncStorage from '@react-native-community/async-storage';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class Home extends Component {
   static navigationOptions = {header: null};
@@ -76,6 +77,7 @@ export default class Home extends Component {
               </View>
               <View style={Style.iconContainer}>
                 <View style={Style.card}>
+                  
                   <Button
                     onPress={() => this.props.navigation.navigate('Materi')}
                     style={Style.iconBox}>

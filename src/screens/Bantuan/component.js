@@ -38,7 +38,7 @@ export default class Profile extends Component {
               <Telpon />
             </View>
             <Text style={Style.title}>No Telpon kami</Text>
-            <Text style={Style.email}>+62 822-2068-8774</Text>
+            <Text style={Style.email}>+62 654-6785-8899</Text>
           </View>
         </View>
       </View>

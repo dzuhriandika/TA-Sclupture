@@ -24,7 +24,7 @@ export default class Definition extends Component {
     return (
       <Container>
         <Header
-          title="Perbedaan Seni Ukir dan Seni Pahat"
+          title="Perbedaan Ukir dan Pahat"
           iconLeft={
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Materi')}>

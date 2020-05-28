@@ -28,6 +28,7 @@ import ArrowLeft from '../../Svg/arrowLeft';
 import scale from '../../utils/scaling';
 import {Card, Content, Button} from 'native-base';
 import METRICS from '../../constants/metrics';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export default class Component extends React.Component {
   // swiper: Swiper;
@@ -72,12 +73,13 @@ export default class Component extends React.Component {
             justifyContent: 'space-between',
           }}>
           <CountDown
-            size={20}
+            size={18}
             digitStyle={{borderColor: '#EF883D'}}
             digitTxtStyle={{
               color: '#fff',
               backgroundColor: '#EF883D',
               borderRadius: 5,
+              padding: 5,
             }}
             timeLabelStyle={{color: 'red', fontWeight: 'bold'}}
             separatorStyle={{color: '#EF883D'}}
@@ -98,131 +100,135 @@ export default class Component extends React.Component {
             <Text style={{color: '#C4C4C4'}}>selesai</Text>
           </Button>
         </View>
-        <Swiper total={this.state.data.length} onPress={this._onPress}>
-          {this.state.data.map(data => (
-            <View>
-              <Card
-                transparent
-                style={{
-                  marginLeft: 20,
-                  padding: 20,
-                  marginRight: 20,
-                  backgroundColor: '#F5F5F5',
-                  borderRadius: 10,
-                }}>
-                <Text
+        <ScrollView>
+          <Swiper total={this.state.data.length} onPress={this._onPress}>
+            {this.state.data.map(data => (
+              <View>
+                <Card
+                  transparent
                   style={{
-                    fontSize: 12,
-                    color: '#C4C4C4',
-                    fontWeight: '600',
-                    fontFamily: 'Nunito-Regular',
+                    marginLeft: 20,
+                    padding: 20,
+                    marginRight: 20,
+                    backgroundColor: '#F5F5F5',
+                    borderRadius: 10,
                   }}>
-                  soal no {data.questionId}
-                </Text>
-                <Text style={{fontFamily: 'Nunito-Regular'}}>{data.title}</Text>
-                <View style={{flexDirection: 'row', padding: 15}}>
-                  <Aunselect />
                   <Text
                     style={{
-                      marginLeft: 10,
-                      fontSize: 14,
+                      fontSize: 12,
+                      color: '#C4C4C4',
                       fontWeight: '600',
-                      color: '#29291E',
                       fontFamily: 'Nunito-Regular',
                     }}>
-                    {data[0]}
+                    soal no {data.questionId}
                   </Text>
-                </View>
+                  <Text style={{fontFamily: 'Nunito-Regular'}}>
+                    {data.title}
+                  </Text>
+                  <View style={{flexDirection: 'row', padding: 15}}>
+                    <Aunselect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                        fontFamily: 'Nunito-Regular',
+                      }}>
+                      {data[0]}
+                    </Text>
+                  </View>
 
-                <View style={{padding: 15, flexDirection: 'row'}}>
-                  <Aunselect />
-                  <Text
-                    style={{
-                      marginLeft: 10,
-                      fontSize: 14,
-                      fontWeight: '600',
-                      color: '#29291E',
-                      fontFamily: 'Nunito-Regular',
-                    }}>
-                    {data[1]}
-                  </Text>
-                </View>
+                  <View style={{padding: 15, flexDirection: 'row'}}>
+                    <Aunselect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                        fontFamily: 'Nunito-Regular',
+                      }}>
+                      {data[1]}
+                    </Text>
+                  </View>
 
-                <View style={{padding: 15, flexDirection: 'row'}}>
-                  <Aunselect />
-                  <Text
-                    style={{
-                      marginLeft: 10,
-                      fontSize: 14,
-                      fontWeight: '600',
-                      color: '#29291E',
-                      fontFamily: 'Nunito-Regular',
-                    }}>
-                    {data[2]}
-                  </Text>
-                </View>
+                  <View style={{padding: 15, flexDirection: 'row'}}>
+                    <Aunselect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                        fontFamily: 'Nunito-Regular',
+                      }}>
+                      {data[2]}
+                    </Text>
+                  </View>
 
-                <View style={{padding: 15, flexDirection: 'row'}}>
-                  <Aunselect />
+                  <View style={{padding: 15, flexDirection: 'row'}}>
+                    <Aunselect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                        fontFamily: 'Nunito-Regular',
+                      }}>
+                      {data[3]}
+                    </Text>
+                  </View>
                   <Text
                     style={{
-                      marginLeft: 10,
-                      fontSize: 14,
+                      fontSize: 12,
+                      color: '#C4C4C4',
                       fontWeight: '600',
-                      color: '#29291E',
                       fontFamily: 'Nunito-Regular',
                     }}>
-                    {data[3]}
+                    jawaban benar
                   </Text>
-                </View>
-                <Text
+                  <View style={{padding: 15, flexDirection: 'row'}}>
+                    <ASelect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                        fontFamily: 'Nunito-Regular',
+                      }}>
+                      {data.answer}
+                    </Text>
+                  </View>
+                </Card>
+                <Card
+                  transparent
                   style={{
-                    fontSize: 12,
-                    color: '#C4C4C4',
-                    fontWeight: '600',
-                    fontFamily: 'Nunito-Regular',
+                    padding: 20,
+                    marginLeft: 20,
+                    marginRight: 20,
+                    backgroundColor: '#F5F5F5',
+                    borderRadius: 10,
                   }}>
-                  jawaban benar
-                </Text>
-                <View style={{padding: 15, flexDirection: 'row'}}>
-                  <ASelect />
                   <Text
                     style={{
-                      marginLeft: 10,
-                      fontSize: 14,
-                      fontWeight: '600',
-                      color: '#29291E',
+                      fontSize: 16,
+                      color: '#EF883D',
                       fontFamily: 'Nunito-Regular',
+                      fontWeight: 'bold',
                     }}>
-                    {data.answer}
+                    Pembahasan
                   </Text>
-                </View>
-              </Card>
-              <Card
-                transparent
-                style={{
-                  padding: 20,
-                  marginLeft: 20,
-                  marginRight: 20,
-                  backgroundColor: '#F5F5F5',
-                  borderRadius: 10,
-                }}>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    color: '#EF883D',
-                    fontFamily: 'Nunito-Regular',
-                    fontWeight: 'bold',
-                  }}>
-                  Pembahasan
-                </Text>
-                <Text style={{fontFamily: 'Nunito-Regular'}}>
-                  {data.pembahasan}
-                </Text>
-              </Card>
-            </View>
-          ))}
-        </Swiper>
+                  <Text style={{fontFamily: 'Nunito-Regular'}}>
+                    {data.pembahasan}
+                  </Text>
+                </Card>
+              </View>
+            ))}
+          </Swiper>
+        </ScrollView>
       </View>
     );
   }

@@ -6,15 +6,13 @@ export default StyleSheet.create({
     padding: 20,
     width: 100 + '%',
   },
-  pd20: {
-    paddingLeft: 20,
-  },
   header: {
     backgroundColor: 'white',
   },
   titleHeader: {
     fontWeight: 'bold',
     fontSize: 25,
+    fontFamily: 'Nunito-Regular',
   },
   logoBox: {
     alignItems: 'center',
@@ -27,9 +25,17 @@ export default StyleSheet.create({
     height: 130,
     borderRadius: 5,
   },
+  body: {
+    textAlign: 'justify',
+    fontFamily: 'Nunito-Regular',
+  },
   title: {
     fontWeight: 'bold',
+    fontFamily: 'Nunito-Regular',
   },
-  mb20: {},
-  marginBottom: 20,
+  gambar: {
+    height: 70,
+    width: 100,
+    alignItems: 'center',
+  },
 });

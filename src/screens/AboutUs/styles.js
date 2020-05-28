@@ -41,4 +41,8 @@ export default StyleSheet.create({
     marginBottom: 100,
     fontFamily: 'Nunito-Regular',
   },
+  logo: {
+    width: 60,
+    height: 60,
+  },
 });

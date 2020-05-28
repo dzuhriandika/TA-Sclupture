@@ -32,7 +32,7 @@ export default class Definition extends Component {
           }
         />
         <ScrollView style={Style.container}>
-          <Text style={{textAlign: 'justify'}}>
+          <Text style={Style.body}>
             Alam yang kaya raya telah memberi inspirasi kepada masyarakat yang
             berpikir kreatif, seperti tercermin dari seni ukir nusantara yang
             kemudian melahirkan beragam jenis, tergantung kepada kreativitas dan

@@ -11,12 +11,10 @@ import {
   Container,
 } from 'native-base';
 import {Image, ScrollView, TouchableOpacity} from 'react-native';
-import {WebView} from 'react-native-webview';
 import Style from './styles';
 import ArrowLeft from '../../Svg/arrowLeft';
 import Header from '../../components/Header';
 import IMAGES from '../../config/image';
-import Video from 'react-native-video';
 
 export default class Definition extends Component {
   render() {

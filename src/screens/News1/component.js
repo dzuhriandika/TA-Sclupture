@@ -12,7 +12,7 @@ export default class Definition extends Component {
     return (
       <Container>
         <Header
-          title="Pameran Seni Rupa dan Desain Grafis"
+          title="Pameran Seni Rupa"
           iconLeft={
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}>
